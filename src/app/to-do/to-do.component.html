@@ -1,0 +1,16 @@
+
+<form #colorForm="ngForm" (ngSubmit)="addTask(taskForm)">
+    <label for="newtask">New Task </label>
+    <input type="text" id="newtask" ngModel name="newtask" />
+    <button>Add Task</button>
+  </form>
+  
+  <div>
+    <p>Things To Do</p>
+    <div [ngStyle]="{ color: color }" *ngFor="let color of colorList; index as i">
+      <p>{{ color }}</p>
+      <p>{{ i }}</p>
+      <button (click)="removeColor(i)">X</button>
+    </div>
+  </div>
+  
